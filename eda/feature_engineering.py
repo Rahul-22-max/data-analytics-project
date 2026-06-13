@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 # Load dataset
 df = pd.read_csv("Data/raw/Telco-Customer-Churn.csv")
@@ -9,7 +10,7 @@ df["TotalCharges"] = pd.to_numeric(
     errors="coerce"
 )
 
-# Fill missing values
+# Fill missing values with median
 df["TotalCharges"] = df["TotalCharges"].fillna(
     df["TotalCharges"].median()
 )
@@ -26,28 +27,49 @@ df["TenureGroup"] = pd.cut(
     ]
 )
 
-# Encode gender
+# Encode Gender
 df["gender"] = df["gender"].map({
     "Male": 1,
     "Female": 0
 })
 
-# Encode churn
+# Encode Churn
 df["Churn"] = df["Churn"].map({
     "Yes": 1,
     "No": 0
 })
 
-print("Feature Engineering Completed")
+# Remove customerID because it is unique for every customer
+df.drop("customerID", axis=1, inplace=True)
+
+# Find remaining categorical columns
+categorical_cols = df.select_dtypes(
+    include=["object", "string"]
+).columns
+
+print("\nRemaining Categorical Columns:")
+print(categorical_cols)
+
+# One-Hot Encode remaining categorical columns
+df = pd.get_dummies(
+    df,
+    columns=categorical_cols,
+    drop_first=True
+)
+
+print("\nAfter Encoding:")
 print(df.head())
 
-import os
+print("\nFeature Engineering Completed")
 
+# Create processed folder if it doesn't exist
 os.makedirs("Data/processed", exist_ok=True)
 
+# Save processed dataset
 df.to_csv(
     "Data/processed/cleaned_telco_customer_churn.csv",
     index=False
 )
 
-print("Processed dataset saved successfully")
+print("\nProcessed dataset saved successfully")
+print("Shape of processed dataset:", df.shape)
