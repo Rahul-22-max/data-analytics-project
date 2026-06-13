@@ -4,44 +4,66 @@
 
 This project aims to predict customer churn and estimate Customer Lifetime Value (LTV) using data analytics and machine learning techniques. The objective is to help businesses identify customers who are likely to leave and understand the long-term value of each customer.
 
+---
+
 ## Project Objectives
 
 * Analyze customer behavior and subscription patterns.
-* Identify factors that influence customer churn.
+* Identify factors influencing customer churn.
+* Perform Exploratory Data Analysis (EDA).
+* Apply Feature Engineering techniques.
 * Build a machine learning model to predict churn.
 * Estimate Customer Lifetime Value (LTV).
-* Create insights and visualizations for business decision-making.
+* Generate business insights and visualizations.
+
+---
 
 ## Team Members
 
-* Team Lead: B.Rahul Charan Babu
-* Member 1: S.Mohamed Javeeth
-* Member 2: B.Rahul Charan Babu
-* Member 3: Sri Veena Tejaswini
-* Member 4: Hariom Pandey
-* Member 5: Prakalya G.B
+| Role      | Name                 |
+| --------- | -------------------- |
+| Team Lead | B. Rahul Charan Babu |
+| Member 1  | S. Mohamed Javeeth   |
+| Member 2  | B. Rahul Charan Babu |
+| Member 3  | Sri Veena Tejaswini  |
+| Member 4  | Hariom Pandey        |
+| Member 5  | Prakalya G.B         |
+
+---
 
 ## Project Structure
 
-Customer-Churn-Project/
+```text
+DATA-ANALYTICS-PROJECT/
 
-├── data/            # Dataset files
+Data/
+├── raw/
+│   └── Telco-Customer-Churn.csv
+│
+└── processed/
+    └── cleaned_telco_customer_churn.csv
 
-├── notebooks/       # Jupyter notebooks
+docs/
+├── dataset_description.md
+├── day2_business_insights.md
+└── team_progress_report.md
 
-├── src/             # Python source code
+eda/
+├── data_loader.py
+├── churn_analysis.py
+├── churn_visualization.py
+└── feature_engineering.py
 
-├── reports/         # Reports and project outputs
+README.md
+```
 
-├── docs/            # Documentation
-
-└── README.md        # Project overview
+---
 
 ## Dataset
 
-Dataset Name: Customer Churn Dataset
+**Dataset Name:** Telco Customer Churn Dataset
 
-The dataset contains customer information such as:
+The dataset contains:
 
 * Customer demographics
 * Service subscriptions
@@ -50,24 +72,62 @@ The dataset contains customer information such as:
 * Total charges
 * Churn status
 
+---
+
 ## Tools & Technologies
 
-* Python
+* Python 3.12
 * Pandas
 * NumPy
 * Matplotlib
 * Seaborn
 * Scikit-learn
-* Jupyter Notebook
 * Git & GitHub
+* VS Code
+
+---
+
+## Completed Work
+
+### Day 1
+
+* Repository setup
+* Branch creation
+* Dataset loading
+* Basic data inspection
+
+### Day 2
+
+* Exploratory Data Analysis (EDA)
+* Missing value analysis
+* Churn analysis
+* Business insights
+
+### Day 3
+
+* Data cleaning
+* TotalCharges conversion
+* Missing value handling
+* TenureGroup creation
+* Gender encoding
+* Churn encoding
+* One-Hot Encoding
+* Processed dataset creation
+
+---
 
 ## Expected Outcomes
 
 * Customer churn prediction model
-* Customer Lifetime Value estimation
+* Customer Lifetime Value (LTV) estimation
 * Business insights and recommendations
 * Visual dashboards and reports
 
+---
+
 ## Project Status
 
-Project initialization and dataset preparation phase.
+✅ Day 1 Completed
+✅ Day 2 Completed
+✅ Day 3 Completed
+🚀 Preparing for Day 4: Advanced Churn Analysis & Business Insights
