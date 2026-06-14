@@ -25,9 +25,9 @@ This project aims to predict customer churn and estimate Customer Lifetime Value
 | Team Lead | B. Rahul Charan Babu |
 | Member 1  | S. Mohamed Javeeth   |
 | Member 2  | B. Rahul Charan Babu |
-| Member 3  | Sri Veena Tejaswini  |
+| Member 3  | Prakalya G B         |
 | Member 4  | Hariom Pandey        |
-| Member 5  | Prakalya G.B         |
+| Member 5  |Sri Veena Tejaswini   |        |
 
 ---
 
