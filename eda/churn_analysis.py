@@ -5,6 +5,7 @@ df = pd.read_csv(
     "Data/processed/cleaned_telco_customer_churn.csv"
 )
 
+# Dataset shape
 print("Dataset Shape:", df.shape)
 
 # ---------------------------------
@@ -13,7 +14,9 @@ print("Dataset Shape:", df.shape)
 
 print("\n===== CHURN DISTRIBUTION =====")
 
-print(df["Churn"].value_counts())
+print(
+    df["Churn"].value_counts()
+)
 
 # ---------------------------------
 # Churn Rate by Gender
@@ -26,7 +29,7 @@ print(
 )
 
 # ---------------------------------
-# Churn Rate by Contract
+# Churn Rate by Contract Type
 # ---------------------------------
 
 print("\n===== CHURN RATE BY CONTRACT =====")
@@ -49,18 +52,14 @@ for col in contract_cols:
 # Churn Rate by Tenure Group
 # ---------------------------------
 
-print("\n===== CHTURN RATE BY TENURE GROUP =====")
+print("\n===== CHURN RATE BY TENURE GROUP =====")
 
 print(
     df.groupby("TenureGroup")["Churn"].mean()
 )
 
 # ---------------------------------
-# Show All Columns
+# Completion Message
 # ---------------------------------
-
-print("\n===== ALL COLUMNS =====")
-
-print(df.columns)
 
 print("\nDay 4 Churn Analysis Completed!")
