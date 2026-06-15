@@ -2,9 +2,14 @@
 
 ## Day 1 Progress
 
-- Created churn prediction module structure
+- Created project structure
 - Added data loading utility
 - Added train/test split framework
 - Added evaluation framework
 
-Branch: Prakalya
+## Day 2 Progress
+
+- Created Python virtual environment
+- Installed ML dependencies
+- Generated requirements.txt
+- Configured project environment
