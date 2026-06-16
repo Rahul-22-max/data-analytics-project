@@ -13,3 +13,17 @@
 - Installed ML dependencies
 - Generated requirements.txt
 - Configured project environment
+
+## Day 3 Progress
+
+- Implemented Logistic Regression baseline model
+- Loaded processed churn dataset
+- Performed train/test split
+- Generated predictions
+- Evaluated model performance
+
+Results:
+- Accuracy: 80.55%
+- Precision: 65.72%
+- Recall: 55.88%
+- F1 Score: 60.40%

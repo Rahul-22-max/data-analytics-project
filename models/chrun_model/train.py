@@ -1,20 +1,27 @@
 import pandas as pd
+from evaluate import evaluate
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from evaluate import evaluate
 
 # Load dataset
-df = pd.read_csv("Data/processed/cleaned_telco_customer_churn.csv")
+df = pd.read_csv(
+    "Data/processed/cleaned_telco_customer_churn.csv",
+    sep="\t"
+)
 
-# Remove non-numeric column if present
+# Remove columns that contain text values
 if "TenureGroup" in df.columns:
     df = df.drop("TenureGroup", axis=1)
+
+# Check for any remaining text columns
+print("Object columns:")
+print(df.select_dtypes(include=["object"]).columns.tolist())
 
 # Features and target
 X = df.drop("Churn", axis=1)
 y = df["Churn"]
 
-# Split dataset
+# Train/Test Split
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -23,7 +30,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y
 )
 
-# Train model
+# Train Logistic Regression Model
 model = LogisticRegression(max_iter=1000)
 
 model.fit(X_train, y_train)
