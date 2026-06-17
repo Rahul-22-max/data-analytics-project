@@ -1,4 +1,5 @@
 import pandas as pd
+import joblib
 from evaluate import evaluate
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -12,10 +13,6 @@ df = pd.read_csv(
 # Remove columns that contain text values
 if "TenureGroup" in df.columns:
     df = df.drop("TenureGroup", axis=1)
-
-# Check for any remaining text columns
-print("Object columns:")
-print(df.select_dtypes(include=["object"]).columns.tolist())
 
 # Features and target
 X = df.drop("Churn", axis=1)
@@ -31,9 +28,20 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Train Logistic Regression Model
-model = LogisticRegression(max_iter=1000)
+model = LogisticRegression(
+    max_iter=2000,
+    solver="liblinear"
+)
 
 model.fit(X_train, y_train)
+
+# Save model
+joblib.dump(
+    model,
+    "models/chrun_model/churn_model.pkl"
+)
+
+print("Model saved successfully")
 
 # Predictions
 y_pred = model.predict(X_test)
