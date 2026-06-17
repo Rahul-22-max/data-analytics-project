@@ -44,3 +44,20 @@ Commit and push: ⏳
 - Saved trained model as churn_model.pkl
 - Implemented Decision Tree baseline
 - Compared Logistic Regression and Decision Tree performance
+
+## Day 5 Progress
+
+- Implemented Decision Tree classifier
+- Implemented Random Forest classifier
+- Compared Logistic Regression, Decision Tree and Random Forest
+- Evaluated model performance using Accuracy and F1 Score
+- Created model comparison report
+- Selected Logistic Regression as the best-performing model
+
+### Final Model Performance
+
+| Model | Accuracy | F1 Score |
+|---------|---------:|---------:|
+| Logistic Regression | 80.41% | 59.77% |
+| Decision Tree | 74.45% | 51.48% |
+| Random Forest | 78.57% | 55.19% |
