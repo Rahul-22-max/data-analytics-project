@@ -42,6 +42,9 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Feature selection
 * Machine Learning preparation
 * Train-test split
+* Machine Learning model development
+* Logistic Regression model training
+* Model evaluation
 
 **Status:**
 
@@ -67,11 +70,17 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Prepared features (`X`) and target (`y`)
 * Applied one-hot encoding to categorical features
 * Generated `day7_ml_preparation.md`
+* Created `logistic_regression_model.py`
+* Trained Logistic Regression model
+* Achieved **80.06%** model accuracy
+* Generated confusion matrix and classification report
+* Removed convergence warning using `solver="liblinear"`
+* Generated `day8_model_training.md`
 * Prepared dataset for churn prediction model development
 * Reviewed and validated processed dataset
 * Updated README and project documentation
 
-**Status:** ✅ Day 7 Completed
+**Status:** ✅ Day 8 Completed
 
 ---
 
@@ -89,11 +98,11 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
 * Received processed dataset from Member 2
 * Received train-test split dataset
-* Ready to begin model development
-* Feature selection completed
-* Model training pending
+* Logistic Regression baseline model completed
+* Additional ML models to be trained and compared
+* Model optimization in progress
 
-**Status:** 🟡 Ready to Start
+**Status:** 🟡 In Progress
 
 ---
 
@@ -155,20 +164,22 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Feature selection for ML
 * Machine Learning preparation
 * Train-test split
+* Logistic Regression model training
+* Model evaluation
+* Generated `day8_model_training.md`
 * Dataset ready for churn prediction model
-* Generated `day7_ml_preparation.md`
 * Dataset validation for ML readiness
 * README and project documentation updates
 
 ### In Progress
 
-* Churn prediction model development
-* Model training by Member 3
+* Advanced machine learning models
+* Model comparison and optimization
 
 ### Pending
 
-* Churn prediction model
-* Model evaluation
+* Decision Tree model
+* Random Forest model
 * Customer Lifetime Value (LTV) model
 * API development
 * Dashboard development
@@ -186,6 +197,7 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Features After Encoding: **33**
 * Training Set Shape: **(5634, 33)**
 * Testing Set Shape: **(1409, 33)**
+* Logistic Regression Accuracy: **80.06%**
 
 ### Important Insights
 
@@ -196,27 +208,28 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Contract type and tenure are among the strongest churn indicators identified during EDA.
 * Fiber optic internet users have a higher churn tendency.
 * Electronic check payment method is positively correlated with churn.
+* Logistic Regression achieved strong baseline performance with **80.06% accuracy**.
 
 ---
 
-## Day 7 Achievements
+## Day 8 Achievements
 
-* Created train-test split using 80:20 ratio.
-* Prepared feature matrix (`X`) and target variable (`y`).
-* Applied one-hot encoding to categorical features.
-* Generated `day7_ml_preparation.md`.
-* Prepared dataset for churn prediction model development.
-* Successfully handed over ML-ready dataset to Member 3.
+* Trained Logistic Regression model.
+* Achieved **80.06%** prediction accuracy.
+* Generated confusion matrix and classification report.
+* Improved model convergence using `solver="liblinear"`.
+* Created `day8_model_training.md`.
+* Established baseline model for churn prediction.
 
 ---
 
-## Next Milestone (Day 8)
+## Next Milestone (Day 9)
 
-* Begin churn prediction model training.
-* Train Logistic Regression model.
-* Evaluate model accuracy and confusion matrix.
-* Compare model performance metrics.
-* Document model results.
+* Train Decision Tree Classifier.
+* Compare Decision Tree with Logistic Regression.
+* Evaluate model performance metrics.
+* Select the best performing model.
+* Document model comparison results.
 
 ---
 
@@ -225,6 +238,6 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 **B. Rahul Charan Babu**
 Team Lead & Member 2
 
-**Project Day:** 7
+**Project Day:** 8
 
-**Overall Project Progress:** **60% Completed** ✅
+**Overall Project Progress:** **70% Completed** ✅
