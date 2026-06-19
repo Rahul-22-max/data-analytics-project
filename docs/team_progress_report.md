@@ -44,7 +44,9 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Train-test split
 * Machine Learning model development
 * Logistic Regression model training
+* Decision Tree model training
 * Model evaluation
+* Model comparison
 
 **Status:**
 
@@ -76,11 +78,16 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Generated confusion matrix and classification report
 * Removed convergence warning using `solver="liblinear"`
 * Generated `day8_model_training.md`
+* Created `decision_tree_model.py`
+* Trained Decision Tree Classifier
+* Achieved **80.62%** model accuracy
+* Compared Logistic Regression and Decision Tree models
+* Generated `day9_model_comparison.md`
 * Prepared dataset for churn prediction model development
 * Reviewed and validated processed dataset
 * Updated README and project documentation
 
-**Status:** ✅ Day 8 Completed
+**Status:** ✅ Day 9 Completed
 
 ---
 
@@ -99,6 +106,7 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Received processed dataset from Member 2
 * Received train-test split dataset
 * Logistic Regression baseline model completed
+* Decision Tree model completed
 * Additional ML models to be trained and compared
 * Model optimization in progress
 
@@ -165,8 +173,11 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Machine Learning preparation
 * Train-test split
 * Logistic Regression model training
+* Decision Tree model training
 * Model evaluation
+* Model comparison
 * Generated `day8_model_training.md`
+* Generated `day9_model_comparison.md`
 * Dataset ready for churn prediction model
 * Dataset validation for ML readiness
 * README and project documentation updates
@@ -178,7 +189,6 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
 ### Pending
 
-* Decision Tree model
 * Random Forest model
 * Customer Lifetime Value (LTV) model
 * API development
@@ -198,6 +208,7 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Training Set Shape: **(5634, 33)**
 * Testing Set Shape: **(1409, 33)**
 * Logistic Regression Accuracy: **80.06%**
+* Decision Tree Accuracy: **80.62%**
 
 ### Important Insights
 
@@ -209,27 +220,28 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Fiber optic internet users have a higher churn tendency.
 * Electronic check payment method is positively correlated with churn.
 * Logistic Regression achieved strong baseline performance with **80.06% accuracy**.
+* Decision Tree slightly outperformed Logistic Regression with **80.62% accuracy**.
 
 ---
 
-## Day 8 Achievements
+## Day 9 Achievements
 
-* Trained Logistic Regression model.
-* Achieved **80.06%** prediction accuracy.
+* Trained Decision Tree Classifier.
+* Achieved **80.62%** prediction accuracy.
 * Generated confusion matrix and classification report.
-* Improved model convergence using `solver="liblinear"`.
-* Created `day8_model_training.md`.
-* Established baseline model for churn prediction.
+* Compared Decision Tree with Logistic Regression.
+* Created `day9_model_comparison.md`.
+* Identified strengths and limitations of both models.
 
 ---
 
-## Next Milestone (Day 9)
+## Next Milestone (Day 10)
 
-* Train Decision Tree Classifier.
-* Compare Decision Tree with Logistic Regression.
+* Train Random Forest Classifier.
+* Compare Random Forest with Logistic Regression and Decision Tree.
 * Evaluate model performance metrics.
 * Select the best performing model.
-* Document model comparison results.
+* Prepare model saving pipeline.
 
 ---
 
@@ -238,6 +250,6 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 **B. Rahul Charan Babu**
 Team Lead & Member 2
 
-**Project Day:** 8
+**Project Day:** 9
 
-**Overall Project Progress:** **70% Completed** ✅
+**Overall Project Progress:** **80% Completed** ✅
