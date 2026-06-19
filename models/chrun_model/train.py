@@ -35,6 +35,26 @@ model = LogisticRegression(
 
 model.fit(X_train, y_train)
 
+coef_df = pd.DataFrame({
+    "Feature": X.columns,
+    "Coefficient": model.coef_[0]
+})
+
+coef_df["Abs_Coefficient"] = coef_df["Coefficient"].abs()
+
+coef_df = coef_df.sort_values(
+    by="Abs_Coefficient",
+    ascending=False
+)
+
+print("\nTop 10 Important Features:")
+print(coef_df.head(10))
+
+coef_df.to_csv(
+    "reports/logistic_feature_importance.csv",
+    index=False
+)
+
 # Save model
 joblib.dump(
     model,
@@ -46,7 +66,29 @@ print("Model saved successfully")
 # Predictions
 y_pred = model.predict(X_test)
 
+# ROC-AUC Score
+from sklearn.metrics import roc_auc_score
+
+y_prob = model.predict_proba(X_test)[:, 1]
+
+auc = roc_auc_score(y_test, y_prob)
+
+print(f"\nROC-AUC Score: {auc:.4f}")
+
+
 # Evaluation
 evaluate(y_test, y_pred)
+
+from sklearn.metrics import classification_report
+
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred))
+
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_test, y_pred)
+
+print("\nConfusion Matrix:")
+print(cm)
 
 print("Logistic Regression Model Trained Successfully")
