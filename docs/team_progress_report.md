@@ -45,6 +45,7 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Machine Learning model development
 * Logistic Regression model training
 * Decision Tree model training
+* Random Forest model training
 * Model evaluation
 * Model comparison
 
@@ -83,11 +84,17 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Achieved **80.62%** model accuracy
 * Compared Logistic Regression and Decision Tree models
 * Generated `day9_model_comparison.md`
+* Created `random_forest_model.py`
+* Trained Random Forest Classifier
+* Achieved **80.41%** model accuracy
+* Compared Random Forest with Logistic Regression and Decision Tree
+* Generated `day10_random_forest.md`
+* Identified Decision Tree as the current best model
 * Prepared dataset for churn prediction model development
 * Reviewed and validated processed dataset
 * Updated README and project documentation
 
-**Status:** ✅ Day 9 Completed
+**Status:** ✅ Day 10 Completed
 
 ---
 
@@ -105,10 +112,11 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
 * Received processed dataset from Member 2
 * Received train-test split dataset
-* Logistic Regression baseline model completed
+* Logistic Regression model completed
 * Decision Tree model completed
-* Additional ML models to be trained and compared
-* Model optimization in progress
+* Random Forest model completed
+* Model comparison completed
+* Best model selection pending
 
 **Status:** 🟡 In Progress
 
@@ -126,7 +134,7 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
 **Status:**
 
-* Awaiting churn model outputs
+* Awaiting final churn model
 * Initial planning pending
 
 **Status:** ⏳ Pending
@@ -145,7 +153,7 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
 **Status:**
 
-* Awaiting model outputs and predictions
+* Awaiting final model outputs
 * Dashboard framework planning pending
 
 **Status:** ⏳ Pending
@@ -174,22 +182,24 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Train-test split
 * Logistic Regression model training
 * Decision Tree model training
+* Random Forest model training
 * Model evaluation
 * Model comparison
 * Generated `day8_model_training.md`
 * Generated `day9_model_comparison.md`
+* Generated `day10_random_forest.md`
 * Dataset ready for churn prediction model
 * Dataset validation for ML readiness
 * README and project documentation updates
 
 ### In Progress
 
-* Advanced machine learning models
-* Model comparison and optimization
+* Final model selection
+* Model serialization and deployment preparation
 
 ### Pending
 
-* Random Forest model
+* Save best model using `joblib`
 * Customer Lifetime Value (LTV) model
 * API development
 * Dashboard development
@@ -207,8 +217,14 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Features After Encoding: **33**
 * Training Set Shape: **(5634, 33)**
 * Testing Set Shape: **(1409, 33)**
-* Logistic Regression Accuracy: **80.06%**
-* Decision Tree Accuracy: **80.62%**
+
+### Model Performance
+
+| Model               |     Accuracy |
+| ------------------- | -----------: |
+| Logistic Regression |   **80.06%** |
+| Decision Tree       | **80.62%** ✅ |
+| Random Forest       |   **80.41%** |
 
 ### Important Insights
 
@@ -219,29 +235,29 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Contract type and tenure are among the strongest churn indicators identified during EDA.
 * Fiber optic internet users have a higher churn tendency.
 * Electronic check payment method is positively correlated with churn.
-* Logistic Regression achieved strong baseline performance with **80.06% accuracy**.
-* Decision Tree slightly outperformed Logistic Regression with **80.62% accuracy**.
+* Decision Tree currently performs best with **80.62% accuracy**.
+* Random Forest provides stable predictions with **80.41% accuracy**.
 
 ---
 
-## Day 9 Achievements
+## Day 10 Achievements
 
-* Trained Decision Tree Classifier.
-* Achieved **80.62%** prediction accuracy.
+* Trained Random Forest Classifier.
+* Achieved **80.41%** prediction accuracy.
 * Generated confusion matrix and classification report.
-* Compared Decision Tree with Logistic Regression.
-* Created `day9_model_comparison.md`.
-* Identified strengths and limitations of both models.
+* Compared Random Forest with Logistic Regression and Decision Tree.
+* Created `day10_random_forest.md`.
+* Identified Decision Tree as the current best model.
 
 ---
 
-## Next Milestone (Day 10)
+## Next Milestone (Day 11)
 
-* Train Random Forest Classifier.
-* Compare Random Forest with Logistic Regression and Decision Tree.
-* Evaluate model performance metrics.
-* Select the best performing model.
-* Prepare model saving pipeline.
+* Compare all machine learning models in detail.
+* Select the final best model.
+* Save the trained model using `joblib`.
+* Prepare model for API deployment.
+* Begin prediction pipeline development.
 
 ---
 
@@ -250,6 +266,6 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 **B. Rahul Charan Babu**
 Team Lead & Member 2
 
-**Project Day:** 9
+**Project Day:** 10
 
-**Overall Project Progress:** **80% Completed** ✅
+**Overall Project Progress:** **85% Completed** ✅
