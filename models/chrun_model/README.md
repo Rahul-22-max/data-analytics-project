@@ -123,3 +123,20 @@ Data/processed/churn_predictions.csv
 - Support customer retention campaigns
 - Enable large-scale churn scoring
 - Prepare predictions for dashboards and reporting
+
+## Day 9 Progress
+
+- Implemented prediction analytics pipeline
+- Segmented customers into churn risk groups
+- Generated customer risk summary
+- Calculated risk distribution percentages
+- Exported analytics results to CSV
+- Added business recommendations for retention strategies
+
+### Risk Distribution
+
+| Category | Customers |
+|----------|----------:|
+| High Risk | 504 |
+| Medium Risk | 1579 |
+| Low Risk | 4960 |
