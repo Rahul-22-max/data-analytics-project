@@ -82,3 +82,22 @@ Commit and push: ⏳
 - OnlineSecurity_Yes
 - TechSupport_Yes
 - Dependents_Yes
+
+## Day 7 Progress
+
+- Implemented model inference pipeline
+- Loaded saved Logistic Regression model using Joblib
+- Generated predictions for new customer profiles
+- Calculated churn probability scores
+- Created inference documentation
+
+### Sample Prediction
+
+| Metric | Value |
+|----------|----------|
+| Prediction | 0 (No Churn) |
+| Churn Probability | 21.06% |
+
+### Outcome
+
+The trained model successfully predicts customer churn risk and can be used for customer retention and risk scoring applications.
