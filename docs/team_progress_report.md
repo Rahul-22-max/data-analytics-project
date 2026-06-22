@@ -50,6 +50,7 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Model comparison
 * Model selection
 * Model serialization
+* Prediction pipeline development
 
 **Status:**
 
@@ -76,26 +77,28 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Applied one-hot encoding to categorical features
 * Generated `day7_ml_preparation.md`
 * Created `logistic_regression_model.py`
-* Trained Logistic Regression model
-* Achieved **80.06%** model accuracy
+* Trained Logistic Regression model (**80.06%** accuracy)
 * Generated `day8_model_training.md`
 * Created `decision_tree_model.py`
-* Trained Decision Tree Classifier
-* Achieved **80.62%** model accuracy
+* Trained Decision Tree Classifier (**80.62%** accuracy)
 * Generated `day9_model_comparison.md`
 * Created `random_forest_model.py`
-* Trained Random Forest Classifier
-* Achieved **80.41%** model accuracy
+* Trained Random Forest Classifier (**80.41%** accuracy)
 * Generated `day10_random_forest.md`
 * Created `model_comparison.py`
 * Compared all machine learning models
 * Selected **Decision Tree** as the final best model
 * Created `save_model.py`
-* Saved trained model as `saved_models/churn_prediction_model.pkl`
+* Saved model as `saved_models/churn_prediction_model.pkl`
 * Generated `day11_model_selection.md`
+* Created `predict.py`
+* Loaded saved model successfully
+* Built prediction pipeline for new customer data
+* Successfully predicted churn for sample customer
+* Generated `day12_prediction_pipeline.md`
 * Updated README and project documentation
 
-**Status:** ✅ Day 11 Completed
+**Status:** ✅ Day 12 Completed
 
 ---
 
@@ -117,7 +120,9 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Random Forest model completed
 * Model comparison completed
 * Best model selected: **Decision Tree**
-* Saved model ready for deployment
+* Model saved successfully
+* Prediction pipeline completed
+* Model ready for API deployment
 
 **Status:** 🟡 In Progress
 
@@ -154,10 +159,11 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
 **Status:**
 
-* Awaiting saved model and prediction pipeline
-* Dashboard framework planning pending
+* Saved model available
+* Prediction pipeline completed
+* Ready to start API development
 
-**Status:** ⏳ Pending
+**Status:** 🟡 Ready to Start
 
 ---
 
@@ -188,18 +194,20 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Model comparison
 * Model selection
 * Model saving using `joblib`
+* Prediction pipeline creation
 * Generated `day8_model_training.md`
 * Generated `day9_model_comparison.md`
 * Generated `day10_random_forest.md`
 * Generated `day11_model_selection.md`
+* Generated `day12_prediction_pipeline.md`
 * Saved model: `saved_models/churn_prediction_model.pkl`
 * Dataset validation for ML readiness
 * README and project documentation updates
 
 ### In Progress
 
-* Prediction pipeline development
 * API deployment preparation
+* Dashboard planning
 
 ### Pending
 
@@ -239,30 +247,30 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 * Fiber optic internet users have a higher churn tendency.
 * Electronic check payment method is positively correlated with churn.
 * Decision Tree achieved the highest accuracy (**80.62%**) and was selected as the final model.
-* The trained model has been saved successfully and is ready for deployment.
+* The prediction pipeline successfully predicts churn for new customer data.
+* The project is now ready for API deployment.
 
 ---
 
-## Day 11 Achievements
+## Day 12 Achievements
 
-* Compared Logistic Regression, Decision Tree, and Random Forest models.
-* Selected Decision Tree as the best model.
-* Created `model_comparison.py`.
-* Created `save_model.py`.
-* Saved the trained model as `saved_models/churn_prediction_model.pkl`.
-* Generated `day11_model_selection.md`.
-* Prepared the project for prediction pipeline and API deployment.
+* Created `predict.py`.
+* Loaded saved Decision Tree model.
+* Built prediction pipeline.
+* Predicted churn for sample customer data.
+* Generated `day12_prediction_pipeline.md`.
+* Prepared project for API integration and deployment.
 
 ---
 
-## Next Milestone (Day 12)
+## Next Milestone (Day 13)
 
-* Load the saved model.
-* Build prediction pipeline.
-* Predict churn for new customer data.
-* Create `predict.py`.
-* Prepare model for API integration.
-* Begin deployment preparation.
+* Build API using Flask.
+* Create `/predict` endpoint.
+* Create `/health` endpoint.
+* Accept customer data as JSON.
+* Return churn predictions through API.
+* Test API using Postman.
 
 ---
 
@@ -271,6 +279,6 @@ Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 **B. Rahul Charan Babu**
 Team Lead & Member 2
 
-**Project Day:** 11
+**Project Day:** 12
 
-**Overall Project Progress:** **90% Completed** ✅
+**Overall Project Progress:** **95% Completed** ✅
