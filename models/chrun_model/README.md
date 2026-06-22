@@ -61,3 +61,24 @@ Commit and push: ⏳
 | Logistic Regression | 80.41% | 59.77% |
 | Decision Tree | 74.45% | 51.48% |
 | Random Forest | 78.57% | 55.19% |
+
+## Day 6 Progress
+
+- Implemented feature importance analysis
+- Extracted Logistic Regression coefficients
+- Ranked customer attributes based on impact on churn
+- Generated feature importance report
+- Identified major churn drivers and retention factors
+
+### Top Churn Drivers
+
+- PaymentMethod_Electronic check
+- PaperlessBilling_Yes
+- MultipleLines_Yes
+
+### Top Retention Factors
+
+- Contract_One year
+- OnlineSecurity_Yes
+- TechSupport_Yes
+- Dependents_Yes
