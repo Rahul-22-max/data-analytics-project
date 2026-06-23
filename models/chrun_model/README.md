@@ -140,3 +140,31 @@ Data/processed/churn_predictions.csv
 | High Risk | 504 |
 | Medium Risk | 1579 |
 | Low Risk | 4960 |
+
+## Day 10 Progress
+
+- Built FastAPI deployment layer
+- Loaded trained churn prediction model
+- Created REST API endpoints
+- Added prediction endpoint for churn inference
+- Generated Swagger documentation
+- Successfully deployed local API using Uvicorn
+
+### API Endpoints
+
+GET /
+
+Returns API status.
+
+POST /predict
+
+Accepts customer data and returns:
+
+- prediction
+- churn_probability
+
+### Deployment Status
+
+API running successfully on:
+
+http://127.0.0.1:8000
