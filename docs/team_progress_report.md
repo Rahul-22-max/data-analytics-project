@@ -1,284 +1,188 @@
-# Team Progress Report
+# Changes for Day 13 Team Report
 
-## Project Title
+## 1. Update Responsibilities (Member 2)
 
-Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
+Add:
 
----
-
-## Team Members and Roles
-
-### Member 1: Data Engineering & Data Warehouse Setup
-
-**Responsibilities:**
-
-* Dataset collection
-* Data ingestion
-* Repository setup
-* Dataset documentation
-
-**Status:**
-
-* Completed initial dataset setup
-* Uploaded raw dataset
-* Created project structure
-* Added dataset documentation
-
-**Status:** ✅ Completed
+* Flask API development
+* API endpoint creation
+* API testing
+* Deployment preparation
 
 ---
 
-### Member 2 (Team Lead): Exploratory Data Analysis & Feature Engineering
+## 2. Add These Status Points Under Member 2
 
-**Responsibilities:**
+Add after:
 
-* Data cleaning
-* Exploratory Data Analysis (EDA)
-* Feature engineering
-* Business insights generation
-* Visualization and reporting
-* Correlation analysis
-* Correlation visualization
-* Feature selection
-* Machine Learning preparation
-* Train-test split
-* Machine Learning model development
-* Logistic Regression model training
-* Decision Tree model training
-* Random Forest model training
-* Model evaluation
-* Model comparison
-* Model selection
-* Model serialization
-* Prediction pipeline development
+`Generated day12_prediction_pipeline.md`
 
-**Status:**
+```text
+* Installed and configured Flask
+* Created `api/app.py`
+* Loaded saved Decision Tree model inside Flask API
+* Created `/health` endpoint
+* Verified API status successfully
+* Created `/predict` endpoint structure
+* Tested API locally using browser
+* Investigated feature mismatch issue during Postman testing
+* Generated `day13_api_development.md`
+```
 
-* Converted `TotalCharges` to numeric format
-* Handled missing values
-* Created `TenureGroup` feature
-* Encoded `gender` and `Churn` columns
-* Removed `customerID`
-* Generated processed dataset (`cleaned_telco_customer_churn.csv`)
-* Performed churn distribution analysis
-* Calculated churn rate by gender
-* Calculated churn rate by contract type
-* Calculated churn rate by tenure group
-* Created visualization charts
-* Generated `day2_business_insights.md`
-* Generated `day4_business_insights.md`
-* Performed correlation analysis with churn
-* Created correlation visualization chart
-* Identified top positive and negative churn features
-* Selected important features for machine learning
-* Generated `day6_feature_selection.md`
-* Created train-test split using 80:20 ratio
-* Prepared features (`X`) and target (`y`)
-* Applied one-hot encoding to categorical features
-* Generated `day7_ml_preparation.md`
-* Created `logistic_regression_model.py`
-* Trained Logistic Regression model (**80.06%** accuracy)
-* Generated `day8_model_training.md`
-* Created `decision_tree_model.py`
-* Trained Decision Tree Classifier (**80.62%** accuracy)
-* Generated `day9_model_comparison.md`
-* Created `random_forest_model.py`
-* Trained Random Forest Classifier (**80.41%** accuracy)
-* Generated `day10_random_forest.md`
-* Created `model_comparison.py`
-* Compared all machine learning models
-* Selected **Decision Tree** as the final best model
-* Created `save_model.py`
-* Saved model as `saved_models/churn_prediction_model.pkl`
-* Generated `day11_model_selection.md`
-* Created `predict.py`
-* Loaded saved model successfully
-* Built prediction pipeline for new customer data
-* Successfully predicted churn for sample customer
-* Generated `day12_prediction_pipeline.md`
-* Updated README and project documentation
+Change:
 
-**Status:** ✅ Day 12 Completed
+```text
+Status: ✅ Day 12 Completed
+```
+
+to
+
+```text
+Status: ✅ Day 13 Completed
+```
 
 ---
 
-### Member 3: Core ML Engineering (Churn Prediction)
+## 3. Update Member 3 Status
 
-**Assigned To:** Prakalya G.B
+Replace:
 
-**Responsibilities:**
-
-* Model training
-* Model evaluation
-* Churn prediction pipeline
-
-**Status:**
-
-* Received processed dataset from Member 2
-* Logistic Regression model completed
-* Decision Tree model completed
-* Random Forest model completed
-* Model comparison completed
-* Best model selected: **Decision Tree**
-* Model saved successfully
-* Prediction pipeline completed
+```text
 * Model ready for API deployment
+```
 
-**Status:** 🟡 In Progress
+with:
 
----
-
-### Member 4: Lifetime Value (LTV) Modeling & Model Explainability
-
-**Assigned To:** Sri Veena Tejaswini
-
-**Responsibilities:**
-
-* Customer Lifetime Value prediction
-* Model explainability
-* Business interpretation
-
-**Status:**
-
-* Awaiting final churn model outputs
-* Initial planning pending
-
-**Status:** ⏳ Pending
+```text
+* Model integrated with Flask API
+* API deployment preparation completed
+```
 
 ---
 
-### Member 5: API Layer Development & Business Dashboards
+## 4. Update Member 5 Status
 
-**Assigned To:** Hariom Pandey
+Replace:
 
-**Responsibilities:**
+```text
+Status: 🟡 Ready to Start
+```
 
-* API development
-* Dashboard creation
-* Visualization layer
+with:
 
-**Status:**
+```text
+* Flask API framework created
+* Health endpoint implemented
+* Prediction endpoint structure prepared
+* Postman testing planned for next phase
 
-* Saved model available
-* Prediction pipeline completed
-* Ready to start API development
-
-**Status:** 🟡 Ready to Start
+Status: 🟡 In Progress
+```
 
 ---
 
-## Current Project Status
+## 5. Update Current Project Status
 
 ### Completed
 
-* Dataset setup
-* Repository and branch setup
-* Data preprocessing
-* Feature engineering
-* Processed dataset generation
-* Churn distribution analysis
-* Churn analysis by gender
-* Churn analysis by contract type
-* Churn analysis by tenure group
-* Business insights documentation
-* Visualization charts
-* Correlation analysis
-* Correlation visualization
-* Feature selection for ML
-* Machine Learning preparation
-* Train-test split
-* Logistic Regression model training
-* Decision Tree model training
-* Random Forest model training
-* Model evaluation
-* Model comparison
-* Model selection
-* Model saving using `joblib`
-* Prediction pipeline creation
-* Generated `day8_model_training.md`
-* Generated `day9_model_comparison.md`
-* Generated `day10_random_forest.md`
-* Generated `day11_model_selection.md`
-* Generated `day12_prediction_pipeline.md`
-* Saved model: `saved_models/churn_prediction_model.pkl`
-* Dataset validation for ML readiness
-* README and project documentation updates
+Add:
+
+```text
+* Flask API setup
+* Model integration with Flask
+* Health endpoint creation
+* Prediction endpoint structure
+* Generated `day13_api_development.md`
+```
 
 ### In Progress
 
+Replace:
+
+```text
 * API deployment preparation
 * Dashboard planning
+```
+
+with:
+
+```text
+* Prediction API enhancement
+* Dashboard planning
+```
 
 ### Pending
 
-* Customer Lifetime Value (LTV) model
+Replace:
+
+```text
 * API development
-* Dashboard development
-* Model deployment pipeline
+```
+
+with:
+
+```text
+* Advanced API features
+```
 
 ---
 
-## Key Results
+## 6. Update Important Insights
 
-* Total Customers: **7043**
-* Customers Stayed: **5174**
-* Customers Churned: **1869**
-* Processed Dataset Shape: **(7043, 32)**
-* Features Before Encoding: **31**
-* Features After Encoding: **33**
-* Training Set Shape: **(5634, 33)**
-* Testing Set Shape: **(1409, 33)**
+Add:
 
-### Model Performance
-
-| Model               |     Accuracy |
-| ------------------- | -----------: |
-| Logistic Regression |   **80.06%** |
-| Decision Tree       | **80.62%** ✅ |
-| Random Forest       |   **80.41%** |
-
-### Important Insights
-
-* Gender has minimal effect on churn behavior.
-* Customers with long-term contracts have significantly lower churn rates.
-* New customers (0–1 Year tenure) have the highest churn risk.
-* Churn decreases as customer tenure increases.
-* Contract type and tenure are among the strongest churn indicators identified during EDA.
-* Fiber optic internet users have a higher churn tendency.
-* Electronic check payment method is positively correlated with churn.
-* Decision Tree achieved the highest accuracy (**80.62%**) and was selected as the final model.
-* The prediction pipeline successfully predicts churn for new customer data.
-* The project is now ready for API deployment.
+```text
+* Flask API was successfully integrated with the saved Decision Tree model.
+* Health endpoint confirms API availability and readiness.
+* Full JSON-based prediction API will be implemented in the next phase.
+```
 
 ---
 
-## Day 12 Achievements
+## 7. Replace Day 12 Achievements Section
 
-* Created `predict.py`.
-* Loaded saved Decision Tree model.
-* Built prediction pipeline.
-* Predicted churn for sample customer data.
-* Generated `day12_prediction_pipeline.md`.
-* Prepared project for API integration and deployment.
+### Day 13 Achievements
+
+```text
+* Installed and configured Flask.
+* Created `api/app.py`.
+* Loaded saved Decision Tree model inside API.
+* Created `/health` endpoint.
+* Created `/predict` endpoint structure.
+* Tested API locally.
+* Generated `day13_api_development.md`.
+* Prepared project for deployment and advanced API features.
+```
 
 ---
 
-## Next Milestone (Day 13)
+## 8. Replace Next Milestone
 
-* Build API using Flask.
-* Create `/predict` endpoint.
-* Create `/health` endpoint.
-* Accept customer data as JSON.
-* Return churn predictions through API.
+### Next Milestone (Day 14)
+
+```text
+* Implement full JSON prediction API.
+* Accept customer data through POST requests.
+* Apply preprocessing automatically.
+* Match training feature columns.
+* Return prediction results as JSON.
 * Test API using Postman.
+```
 
 ---
 
-### Last Updated By:
+## 9. Update Footer
 
-**B. Rahul Charan Babu**
-Team Lead & Member 2
+Replace:
 
-**Project Day:** 12
+```text
+Project Day: 12
+Overall Project Progress: 95% Completed
+```
 
-**Overall Project Progress:** **95% Completed** ✅
+with:
+
+```text
+Project Day: 13
+Overall Project Progress: 97% Completed ✅
+```
