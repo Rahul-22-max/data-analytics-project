@@ -1,188 +1,138 @@
-# Changes for Day 13 Team Report
+### Member 2 (Team Lead): Exploratory Data Analysis & Feature Engineering
 
-## 1. Update Responsibilities (Member 2)
+**Additional Day 14 Completed Tasks:**
 
-Add:
-
-* Flask API development
-* API endpoint creation
-* API testing
-* Deployment preparation
-
----
-
-## 2. Add These Status Points Under Member 2
-
-Add after:
-
-`Generated day12_prediction_pipeline.md`
-
-```text
-* Installed and configured Flask
+* Created Flask API using `Flask`
 * Created `api/app.py`
-* Loaded saved Decision Tree model inside Flask API
 * Created `/health` endpoint
-* Verified API status successfully
-* Created `/predict` endpoint structure
-* Tested API locally using browser
-* Investigated feature mismatch issue during Postman testing
-* Generated `day13_api_development.md`
-```
+* Created `/predict` endpoint
+* Loaded saved model successfully
+* Loaded training feature columns successfully
+* Implemented JSON request handling
+* Built API prediction workflow
+* Tested API using browser and Postman
+* Successfully returned churn predictions through API
+* Generated `day14_api_prediction.md`
 
-Change:
-
-```text
-Status: ✅ Day 12 Completed
-```
-
-to
-
-```text
-Status: ✅ Day 13 Completed
-```
+**Status:** ✅ Day 14 Completed
 
 ---
 
-## 3. Update Member 3 Status
+### Member 3: Core ML Engineering (Churn Prediction)
 
-Replace:
+**Status Update:**
 
-```text
-* Model ready for API deployment
-```
+* Prediction pipeline completed
+* Flask API integration completed
+* Churn prediction endpoint completed
+* API testing completed
+* Model ready for deployment
 
-with:
-
-```text
-* Model integrated with Flask API
-* API deployment preparation completed
-```
+**Status:** ✅ Completed
 
 ---
 
-## 4. Update Member 5 Status
+### Member 5: API Layer Development & Business Dashboards
 
-Replace:
+**Status Update:**
 
-```text
-Status: 🟡 Ready to Start
-```
-
-with:
-
-```text
-* Flask API framework created
+* Flask API developed
 * Health endpoint implemented
-* Prediction endpoint structure prepared
-* Postman testing planned for next phase
+* Prediction endpoint implemented
+* API tested successfully using Postman
+* Ready for dashboard integration
 
-Status: 🟡 In Progress
-```
+**Status:** 🟡 In Progress
 
 ---
 
-## 5. Update Current Project Status
+## Current Project Status
 
 ### Completed
 
-Add:
-
-```text
-* Flask API setup
-* Model integration with Flask
+* Dataset setup
+* Repository and branch setup
+* Data preprocessing
+* Feature engineering
+* Exploratory Data Analysis (EDA)
+* Correlation analysis
+* Feature selection
+* Machine Learning preparation
+* Logistic Regression model training
+* Decision Tree model training
+* Random Forest model training
+* Model comparison
+* Model selection
+* Model saving using `joblib`
+* Prediction pipeline creation
+* Flask API development
 * Health endpoint creation
-* Prediction endpoint structure
-* Generated `day13_api_development.md`
-```
+* Prediction endpoint creation
+* API testing using Postman
+* Generated `day8_model_training.md`
+* Generated `day9_model_comparison.md`
+* Generated `day10_random_forest.md`
+* Generated `day11_model_selection.md`
+* Generated `day12_prediction_pipeline.md`
+* Generated `day14_api_prediction.md`
+* Saved model: `saved_models/churn_prediction_model.pkl`
+* Saved feature columns: `saved_models/model_columns.pkl`
+* README and project documentation updates
 
 ### In Progress
 
-Replace:
-
-```text
-* API deployment preparation
-* Dashboard planning
-```
-
-with:
-
-```text
-* Prediction API enhancement
-* Dashboard planning
-```
+* Dashboard integration
+* Final project documentation
+* Deployment preparation
 
 ### Pending
 
-Replace:
-
-```text
-* API development
-```
-
-with:
-
-```text
-* Advanced API features
-```
+* Customer Lifetime Value (LTV) model
+* Dashboard development
+* Final deployment pipeline
 
 ---
 
-## 6. Update Important Insights
+## Important Insights
 
-Add:
-
-```text
-* Flask API was successfully integrated with the saved Decision Tree model.
-* Health endpoint confirms API availability and readiness.
-* Full JSON-based prediction API will be implemented in the next phase.
-```
+* Decision Tree achieved the highest accuracy (**80.62%**) and was selected as the final model.
+* The prediction pipeline successfully predicts churn for new customer data.
+* Flask API successfully serves churn predictions.
+* API accepts JSON input and returns predictions in real time.
+* The project is now deployment-ready.
 
 ---
 
-## 7. Replace Day 12 Achievements Section
+## Day 14 Achievements
 
-### Day 13 Achievements
-
-```text
-* Installed and configured Flask.
-* Created `api/app.py`.
-* Loaded saved Decision Tree model inside API.
+* Created Flask API using Flask framework.
 * Created `/health` endpoint.
-* Created `/predict` endpoint structure.
-* Tested API locally.
-* Generated `day13_api_development.md`.
-* Prepared project for deployment and advanced API features.
-```
+* Created `/predict` endpoint.
+* Loaded saved Decision Tree model.
+* Loaded feature columns using `model_columns.pkl`.
+* Built API prediction workflow.
+* Successfully tested API using Postman.
+* Returned churn predictions through JSON responses.
+* Generated `day14_api_prediction.md`.
 
 ---
 
-## 8. Replace Next Milestone
+## Next Milestone (Day 15)
 
-### Next Milestone (Day 14)
-
-```text
-* Implement full JSON prediction API.
-* Accept customer data through POST requests.
-* Apply preprocessing automatically.
-* Match training feature columns.
-* Return prediction results as JSON.
-* Test API using Postman.
-```
+* Final project documentation.
+* Update README with API usage guide.
+* Project cleanup and validation.
+* Final deployment preparation.
+* Team report finalization.
+* Project submission preparation.
 
 ---
 
-## 9. Update Footer
+### Last Updated By:
 
-Replace:
+**B. Rahul Charan Babu**
+Team Lead & Member 2
 
-```text
-Project Day: 12
-Overall Project Progress: 95% Completed
-```
+**Project Day:** 14
 
-with:
-
-```text
-Project Day: 13
-Overall Project Progress: 97% Completed ✅
-```
+**Overall Project Progress:** **98% Completed** ✅
