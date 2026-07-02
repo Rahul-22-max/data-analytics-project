@@ -240,6 +240,42 @@ Repository Highlights
 - Git Version Control
 - Production-ready Project Structure
 
+
+---
+
+
+# Project Documentation
+
+The repository contains comprehensive documentation covering every phase of the project.
+
+| Document | Description |
+|----------|-------------|
+| README.md | Project overview, setup instructions, workflow, and API usage |
+| CHANGELOG.md | Records all major project updates and milestones |
+| LICENSE | MIT License for project usage and distribution |
+| docs/team_progress_report.md | Team progress and daily project updates |
+| docs/day8_model_training.md | Logistic Regression model training |
+| docs/day9_model_comparison.md | Machine learning model comparison |
+| docs/day10_random_forest.md | Random Forest implementation |
+| docs/day11_model_selection.md | Best model selection |
+| docs/day12_prediction_pipeline.md | Prediction pipeline development |
+| docs/day14_api_prediction.md | Flask API implementation and testing |
+
+---
+
+# Repository Maintenance
+
+This repository follows software engineering best practices including:
+
+- Modular project structure
+- Git version control
+- Comprehensive documentation
+- Machine Learning model serialization
+- REST API development using Flask
+- API testing using Postman
+- Project changelog maintenance
+- Open-source licensing (MIT)
+
 ---
 
 Team Members
