@@ -263,6 +263,10 @@ The repository contains comprehensive documentation covering every phase of the 
 
 ---
 
+| CONTRIBUTING.md | Guidelines for contributing to the project |
+
+---
+
 # Repository Maintenance
 
 This repository follows software engineering best practices including:
