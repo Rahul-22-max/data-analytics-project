@@ -267,6 +267,10 @@ The repository contains comprehensive documentation covering every phase of the 
 
 ---
 
+| CODE_OF_CONDUCT.md | Community guidelines and expected behavior |
+
+---
+
 # Repository Maintenance
 
 This repository follows software engineering best practices including:
