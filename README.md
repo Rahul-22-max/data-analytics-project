@@ -271,6 +271,10 @@ The repository contains comprehensive documentation covering every phase of the 
 
 ---
 
+| SECURITY.md | Security policy and vulnerability reporting guidelines |
+
+---
+
 # Repository Maintenance
 
 This repository follows software engineering best practices including:
