@@ -275,6 +275,14 @@ The repository contains comprehensive documentation covering every phase of the 
 
 ---
 
+| SUPPORT.md | Project support and help information |
+
+---
+
+| ROADMAP.md | Future project roadmap and planned enhancements |
+
+---
+
 # Repository Maintenance
 
 This repository follows software engineering best practices including:
