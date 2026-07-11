@@ -283,6 +283,10 @@ The repository contains comprehensive documentation covering every phase of the 
 
 ---
 
+| RELEASE_NOTES.md | Version history and release summary |
+
+---
+
 # Repository Maintenance
 
 This repository follows software engineering best practices including:
