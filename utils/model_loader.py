@@ -1,17 +1,20 @@
 import joblib
 from pathlib import Path
 
-MODELS_DIR = Path("../models")
+# Project root directory
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+# Models directory
+MODELS_DIR = PROJECT_ROOT / "models"
 
 
 def load_model(model_path):
-
-    model_path = Path(model_path)
-
     if not model_path.exists():
         raise FileNotFoundError(
             f"Model file not found: {model_path}"
         )
+
+    print(f"Loading model from: {model_path}")
 
     return joblib.load(model_path)
 
@@ -26,10 +29,6 @@ def load_ltv_model():
 
 def load_linear_model():
     return load_model(MODELS_DIR / "linear_regression_ltv.pkl")
-
-
-# def load_random_forest():
-#     return load_model(MODELS_DIR / "random_forest_ltv.pkl")
 
 
 def load_xgboost():
