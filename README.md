@@ -287,6 +287,10 @@ The repository contains comprehensive documentation covering every phase of the 
 
 ---
 
+| PROJECT_STRUCTURE.md | Explanation of project folder organization |
+
+---
+
 # Repository Maintenance
 
 This repository follows software engineering best practices including:
