@@ -1,8 +1,23 @@
+import pandas as pd
 from utils.model_loader import load_ltv_model
 
 model = load_ltv_model()
 
-def predict(data):
-    prediction = model.predict(data)
+def predict_ltv(customer_data):
+    try:
 
-    return float(prediction[0])
+        input_df = pd.DataFrame([customer_data])
+
+        prediction = model.predict(input_df)
+
+        return {
+            "success": True,
+            "predicted_ltv": float(prediction[0])
+        }
+
+    except Exception as e:
+
+        return {
+            "success": False,
+            "error": str(e)
+        }

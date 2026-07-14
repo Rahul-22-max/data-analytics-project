@@ -20,3 +20,4 @@ class CustomerData(BaseModel):
     PaymentMethod: str
     MonthlyCharges: float
     TotalCharges: float
+    Churn: str

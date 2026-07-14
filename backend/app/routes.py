@@ -4,18 +4,13 @@ from fastapi import APIRouter
 
 from .schemas import CustomerData
 
-from .predictor import predict
+from .predictor import predict_ltv
 
 router = APIRouter()
 
 @router.post("/predict")
+def predict(customer: CustomerData):
 
-def predict_ltv(customer: CustomerData):
+    result = predict_ltv(customer.model_dump())
 
-    df = pd.DataFrame([customer.dict()])
-
-    result = predict(df)
-
-    return {
-        "Predicted_LTV": result
-    }
+    return result
