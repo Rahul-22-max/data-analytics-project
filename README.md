@@ -291,6 +291,11 @@ The repository contains comprehensive documentation covering every phase of the 
 
 ---
 
+| KNOWN_ISSUES.md | Current limitations and future improvements |
+
+
+---
+
 # Repository Maintenance
 
 This repository follows software engineering best practices including:
