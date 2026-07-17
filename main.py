@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from app.routes.home import router as home_router
 
 app = FastAPI(
     title="Customer Churn & LTV Prediction API",
@@ -6,10 +7,4 @@ app = FastAPI(
     version="1.0.0"
 )
 
-@app.get("/")
-def home():
-    return {
-        "status": "success",
-        "message": "Customer Churn & LTV Prediction API is running!",
-        "version": "1.0.0"
-    }
+app.include_router(home_router)
