@@ -12,6 +12,7 @@ from app.routes.home import router as home_router
 from app.routes.health import router as health_router
 from app.routes.prediction import router as prediction_router
 from app.routes.info import router as info_router
+from app.routes.metrics import router as metrics_router
 
 from app.services.model_loader import model
 
@@ -45,6 +46,7 @@ This API predicts whether a customer is likely to churn.
 - Customer Churn Prediction
 - Health Check
 - API Information
+- Application Metrics
 - Standard API Responses
 - Request Logging
 - Environment Configuration
@@ -104,3 +106,4 @@ app.include_router(home_router, prefix=settings.API_PREFIX)
 app.include_router(health_router, prefix=settings.API_PREFIX)
 app.include_router(prediction_router, prefix=settings.API_PREFIX)
 app.include_router(info_router, prefix=settings.API_PREFIX)
+app.include_router(metrics_router, prefix=settings.API_PREFIX)
