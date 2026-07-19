@@ -1,9 +1,9 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class PredictionRequest(BaseModel):
-    tenure: int
-    monthly_charges: float
+    tenure: int = Field(..., ge=0, le=100)
+    monthly_charges: float = Field(..., ge=0)
     contract: str
 
 
