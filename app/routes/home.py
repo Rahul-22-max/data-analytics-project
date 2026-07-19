@@ -1,11 +1,16 @@
 from fastapi import APIRouter
+from app.schemas.response import APIResponse
 
-router = APIRouter()
+router = APIRouter(tags=["Home"])
 
-@router.get("/")
+
+@router.get("/", response_model=APIResponse)
 def home():
-    return {
-        "status": "success",
-        "message": "Customer Churn & LTV Prediction API is running!",
-        "version": "1.0.0"
-    }
+
+    return APIResponse(
+        success=True,
+        message="API is running",
+        data={
+            "project": "Customer Churn Prediction API"
+        }
+    )

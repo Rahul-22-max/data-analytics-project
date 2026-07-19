@@ -1,15 +1,16 @@
 from fastapi import APIRouter
+from app.schemas.response import APIResponse
 
 router = APIRouter(tags=["Health"])
 
 
-@router.get(
-    "/health",
-    summary="Health Check",
-    description="Check whether API is running",
-    response_description="Health status"
-)
+@router.get("/health", response_model=APIResponse)
 def health():
-    return {
-        "status": "healthy"
-    }
+
+    return APIResponse(
+        success=True,
+        message="Health check successful",
+        data={
+            "status": "healthy"
+        }
+    )

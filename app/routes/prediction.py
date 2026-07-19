@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends
 
 from app.schemas.prediction import (
     PredictionRequest,
-    PredictionResponse,
 )
+from app.schemas.response import APIResponse
 from app.services.prediction_service import PredictionService
 from app.dependencies.prediction_dependency import (
     get_prediction_service,
@@ -18,7 +18,7 @@ router = APIRouter(
 
 @router.post(
     "/",
-    response_model=PredictionResponse,
+    response_model=APIResponse,
     summary="Predict Customer Churn",
     description="""
 Predict whether a customer is likely to churn based on:
@@ -27,17 +27,22 @@ Predict whether a customer is likely to churn based on:
 - Monthly charges
 - Contract type
 """,
-    response_description="Prediction result with probability"
+    response_description="Standard API Response"
 )
 def predict(
     request: PredictionRequest,
     service: PredictionService = Depends(get_prediction_service)
 ):
+
     logger.info("Prediction API called")
     logger.info(f"Request Data: {request}")
 
-    response = service.predict(request)
+    prediction = service.predict(request)
 
-    logger.info(f"Prediction Response: {response}")
+    logger.info(f"Prediction Response: {prediction}")
 
-    return response
+    return APIResponse(
+        success=True,
+        message="Prediction successful",
+        data=prediction
+    )
