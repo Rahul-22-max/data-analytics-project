@@ -6,6 +6,7 @@ class PredictionRequest(BaseModel):
     monthly_charges: float
     contract: str
 
+
 class PredictionResponse(BaseModel):
     churn_prediction: str
     probability: float
