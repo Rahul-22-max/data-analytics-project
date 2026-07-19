@@ -1,18 +1,16 @@
-import os
 import joblib
+import os
 
 MODEL_PATH = "models/churn_model.pkl"
 
 
-class ModelLoader:
-    _model = None
+def load_model():
+    if os.path.exists(MODEL_PATH):
+        print("✅ ML model loaded successfully.")
+        return joblib.load(MODEL_PATH)
 
-    @classmethod
-    def load_model(cls):
-        if cls._model is None:
-            if os.path.exists(MODEL_PATH):
-                cls._model = joblib.load(MODEL_PATH)
-                print("✅ ML Model Loaded Successfully")
-            else:
-                print("⚠ ML model not found. Using fallback prediction.")
-        return cls._model
+    print("⚠ ML model not found.")
+    return None
+
+
+model = load_model()
