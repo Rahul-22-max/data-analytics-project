@@ -3,9 +3,15 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.core.config import settings
-from app.core.exceptions import APIException, api_exception_handler
+from app.core.exceptions import (
+    APIException,
+    api_exception_handler,
+    not_found_handler,
+)
+
 from app.middleware.request_logger import RequestLoggerMiddleware
 
 from app.routes.home import router as home_router
@@ -47,11 +53,12 @@ Production-ready FastAPI application.
 - Customer Churn Prediction
 - Health Check
 - API Information
-- Metrics
+- Application Metrics
 - Version Endpoint
 - Request Logging
 - CORS
 - GZip Compression
+- Custom Exception Handling
 """,
     version=settings.APP_VERSION,
     terms_of_service="https://example.com/terms",
@@ -65,12 +72,14 @@ Production-ready FastAPI application.
     lifespan=lifespan,
 )
 
-# ==========================
+# ======================================================
 # Middleware
-# ==========================
+# ======================================================
 
+# Request Logger
 app.add_middleware(RequestLoggerMiddleware)
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -82,20 +91,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# GZip Compression
 app.add_middleware(
     GZipMiddleware,
     minimum_size=1000,
 )
 
-# ==========================
-# Exception Handler
-# ==========================
+# ======================================================
+# Exception Handlers
+# ======================================================
 
 app.add_exception_handler(APIException, api_exception_handler)
 
-# ==========================
+app.add_exception_handler(
+    StarletteHTTPException,
+    not_found_handler
+)
+
+# ======================================================
 # Routers
-# ==========================
+# ======================================================
 
 app.include_router(home_router, prefix=settings.API_PREFIX)
 app.include_router(health_router, prefix=settings.API_PREFIX)
