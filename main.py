@@ -1,11 +1,32 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.core.lifespan import lifespan
 from app.core.exceptions import APIException, api_exception_handler
 from app.middleware.request_logger import RequestLoggerMiddleware
-from app.api.v1 import api_router
+from app.routes.home import router as home_router
+from app.routes.health import router as health_router
+from app.routes.prediction import router as prediction_router
+from app.services.model_loader import model
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("=" * 50)
+    print(f"{settings.APP_NAME} Started")
+
+    if model:
+        print("✅ ML Model loaded")
+    else:
+        print("⚠ ML Model not loaded")
+
+    print("=" * 50)
+
+    yield
+
+    print("Application shutting down...")
+
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -13,33 +34,13 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# -----------------------------
-# CORS Configuration
-# -----------------------------
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# -----------------------------
-# Request Logger Middleware
-# -----------------------------
+# Middleware
 app.add_middleware(RequestLoggerMiddleware)
 
-# -----------------------------
 # Exception Handler
-# -----------------------------
 app.add_exception_handler(APIException, api_exception_handler)
 
-# -----------------------------
-# API Routes
-# -----------------------------
-app.include_router(api_router)
+# Routers
+app.include_router(home_router, prefix=settings.API_PREFIX)
+app.include_router(health_router, prefix=settings.API_PREFIX)
+app.include_router(prediction_router, prefix=settings.API_PREFIX)
