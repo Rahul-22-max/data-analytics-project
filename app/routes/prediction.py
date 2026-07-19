@@ -16,12 +16,23 @@ router = APIRouter(
 )
 
 
-@router.post("/", response_model=PredictionResponse)
+@router.post(
+    "/",
+    response_model=PredictionResponse,
+    summary="Predict Customer Churn",
+    description="""
+Predict whether a customer is likely to churn based on:
+
+- Customer tenure
+- Monthly charges
+- Contract type
+""",
+    response_description="Prediction result with probability"
+)
 def predict(
     request: PredictionRequest,
     service: PredictionService = Depends(get_prediction_service)
 ):
-
     logger.info("Prediction API called")
     logger.info(f"Request Data: {request}")
 

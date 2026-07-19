@@ -1,15 +1,15 @@
 from fastapi import APIRouter
 
-router = APIRouter(
-    prefix="/health",
-    tags=["Health"]
+router = APIRouter(tags=["Health"])
+
+
+@router.get(
+    "/health",
+    summary="Health Check",
+    description="Check whether API is running",
+    response_description="Health status"
 )
-
-
-@router.get("/")
-def health_check():
+def health():
     return {
-        "status": "Healthy",
-        "service": "Customer Churn Prediction API",
-        "version": "1.0.0"
+        "status": "healthy"
     }
