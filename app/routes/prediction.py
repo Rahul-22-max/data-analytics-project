@@ -15,6 +15,11 @@ router = APIRouter(
     tags=["Prediction"]
 )
 
+router = APIRouter(
+    prefix="/predict",
+    tags=["🤖 Prediction"]
+)
+
 
 @router.post(
     "/",

@@ -30,8 +30,31 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title=settings.APP_NAME,
+    description="""
+## Customer Churn Prediction API
+
+This API predicts whether a customer is likely to churn.
+
+### Features
+
+- Customer Churn Prediction
+- Health Check
+- Standard API Responses
+- Request Logging
+- Environment Configuration
+
+Built with FastAPI.
+""",
     version=settings.APP_VERSION,
-    lifespan=lifespan
+    terms_of_service="https://example.com/terms",
+    contact={
+        "name": "Rahul Charan",
+        "email": "rahul@example.com",
+    },
+    license_info={
+        "name": "MIT License",
+    },
+    lifespan=lifespan,
 )
 
 # Middleware
