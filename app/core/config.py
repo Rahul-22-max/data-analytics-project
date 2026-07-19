@@ -1,13 +1,18 @@
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-class Settings:
-    APP_NAME = os.getenv("APP_NAME")
-    APP_VERSION = os.getenv("APP_VERSION")
-    APP_DESCRIPTION = os.getenv("APP_DESCRIPTION")
+class Settings(BaseSettings):
+    APP_NAME: str = "Customer Churn Prediction API"
+    APP_VERSION: str = "1.0.0"
+
+    MODEL_PATH: str = "models/churn_model.pkl"
+
+    LOG_LEVEL: str = "INFO"
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        extra="ignore"
+    )
 
 
 settings = Settings()

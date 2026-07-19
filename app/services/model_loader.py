@@ -1,16 +1,29 @@
-import joblib
 import os
+import joblib
 
-MODEL_PATH = "models/churn_model.pkl"
+from app.core.config import settings
+
+MODEL_PATH = settings.MODEL_PATH
 
 
 def load_model():
-    if os.path.exists(MODEL_PATH):
+    """
+    Load the trained ML model if available.
+    """
+
+    if not os.path.exists(MODEL_PATH):
+        print("⚠ ML model not found.")
+        return None
+
+    try:
+        model = joblib.load(MODEL_PATH)
         print("✅ ML model loaded successfully.")
-        return joblib.load(MODEL_PATH)
+        return model
 
-    print("⚠ ML model not found.")
-    return None
+    except Exception as e:
+        print(f"❌ Failed to load model: {e}")
+        return None
 
 
+# Load the model when the application starts
 model = load_model()
