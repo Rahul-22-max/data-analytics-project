@@ -13,6 +13,7 @@ from app.routes.health import router as health_router
 from app.routes.prediction import router as prediction_router
 from app.routes.info import router as info_router
 from app.routes.metrics import router as metrics_router
+from app.routes.version import router as version_router
 
 from app.services.model_loader import model
 
@@ -39,21 +40,18 @@ app = FastAPI(
     description="""
 ## Customer Churn Prediction API
 
-This API predicts whether a customer is likely to churn.
+Production-ready FastAPI application.
 
 ### Features
 
 - Customer Churn Prediction
 - Health Check
 - API Information
-- Application Metrics
-- Standard API Responses
+- Metrics
+- Version Endpoint
 - Request Logging
-- Environment Configuration
-- CORS Support
+- CORS
 - GZip Compression
-
-Built with FastAPI.
 """,
     version=settings.APP_VERSION,
     terms_of_service="https://example.com/terms",
@@ -67,14 +65,12 @@ Built with FastAPI.
     lifespan=lifespan,
 )
 
-# ======================================================
+# ==========================
 # Middleware
-# ======================================================
+# ==========================
 
-# Request Logger
 app.add_middleware(RequestLoggerMiddleware)
 
-# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -86,24 +82,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# GZip Compression
 app.add_middleware(
     GZipMiddleware,
-    minimum_size=1000
+    minimum_size=1000,
 )
 
-# ======================================================
+# ==========================
 # Exception Handler
-# ======================================================
+# ==========================
 
 app.add_exception_handler(APIException, api_exception_handler)
 
-# ======================================================
+# ==========================
 # Routers
-# ======================================================
+# ==========================
 
 app.include_router(home_router, prefix=settings.API_PREFIX)
 app.include_router(health_router, prefix=settings.API_PREFIX)
 app.include_router(prediction_router, prefix=settings.API_PREFIX)
 app.include_router(info_router, prefix=settings.API_PREFIX)
 app.include_router(metrics_router, prefix=settings.API_PREFIX)
+app.include_router(version_router, prefix=settings.API_PREFIX)
