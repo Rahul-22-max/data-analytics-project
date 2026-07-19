@@ -7,9 +7,12 @@ from fastapi.middleware.gzip import GZipMiddleware
 from app.core.config import settings
 from app.core.exceptions import APIException, api_exception_handler
 from app.middleware.request_logger import RequestLoggerMiddleware
+
 from app.routes.home import router as home_router
 from app.routes.health import router as health_router
 from app.routes.prediction import router as prediction_router
+from app.routes.info import router as info_router
+
 from app.services.model_loader import model
 
 
@@ -35,16 +38,20 @@ app = FastAPI(
     description="""
 ## Customer Churn Prediction API
 
-This API predicts customer churn.
+This API predicts whether a customer is likely to churn.
 
 ### Features
 
 - Customer Churn Prediction
 - Health Check
-- Logging
-- Environment Variables
-- CORS
+- API Information
+- Standard API Responses
+- Request Logging
+- Environment Configuration
+- CORS Support
 - GZip Compression
+
+Built with FastAPI.
 """,
     version=settings.APP_VERSION,
     terms_of_service="https://example.com/terms",
@@ -58,12 +65,14 @@ This API predicts customer churn.
     lifespan=lifespan,
 )
 
-# -------------------------
+# ======================================================
 # Middleware
-# -------------------------
+# ======================================================
 
+# Request Logger
 app.add_middleware(RequestLoggerMiddleware)
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -75,21 +84,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# GZip Compression
 app.add_middleware(
     GZipMiddleware,
     minimum_size=1000
 )
 
-# -------------------------
+# ======================================================
 # Exception Handler
-# -------------------------
+# ======================================================
 
 app.add_exception_handler(APIException, api_exception_handler)
 
-# -------------------------
+# ======================================================
 # Routers
-# -------------------------
+# ======================================================
 
 app.include_router(home_router, prefix=settings.API_PREFIX)
 app.include_router(health_router, prefix=settings.API_PREFIX)
 app.include_router(prediction_router, prefix=settings.API_PREFIX)
+app.include_router(info_router, prefix=settings.API_PREFIX)
