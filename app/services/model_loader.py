@@ -1,5 +1,5 @@
 import os
-import pickle
+import joblib
 
 MODEL_PATH = "models/churn_model.pkl"
 
@@ -9,18 +9,10 @@ class ModelLoader:
 
     @classmethod
     def load_model(cls):
-
         if cls._model is None:
-
             if os.path.exists(MODEL_PATH):
-
-                with open(MODEL_PATH, "rb") as file:
-                    cls._model = pickle.load(file)
-
+                cls._model = joblib.load(MODEL_PATH)
                 print("✅ ML Model Loaded Successfully")
-
             else:
-
-                print("⚠ Model file not found. Using dummy prediction.")
-
+                print("⚠ ML model not found. Using fallback prediction.")
         return cls._model

@@ -1,3 +1,5 @@
+import pandas as pd
+
 from app.schemas.prediction import PredictionRequest, PredictionResponse
 from app.services.model_loader import ModelLoader
 
@@ -9,9 +11,7 @@ class PredictionService:
 
         model = ModelLoader.load_model()
 
-        # Real model will be used later
         if model is None:
-
             if request.tenure < 12:
                 prediction = "Yes"
                 probability = 0.82
@@ -19,12 +19,24 @@ class PredictionService:
                 prediction = "No"
                 probability = 0.91
 
+            return PredictionResponse(
+                churn_prediction=prediction,
+                probability=probability
+            )
+
+        input_df = pd.DataFrame([{
+            "tenure": request.tenure,
+            "MonthlyCharges": request.monthly_charges
+        }])
+
+        prediction = model.predict(input_df)[0]
+
+        if hasattr(model, "predict_proba"):
+            probability = float(max(model.predict_proba(input_df)[0]))
         else:
-            # Placeholder until we integrate the trained model
-            prediction = "No"
-            probability = 0.95
+            probability = 1.0
 
         return PredictionResponse(
-            churn_prediction=prediction,
-            probability=probability
+            churn_prediction="Yes" if prediction == 1 else "No",
+            probability=round(probability, 2)
         )
