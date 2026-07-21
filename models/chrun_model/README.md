@@ -168,3 +168,30 @@ Accepts customer data and returns:
 API running successfully on:
 
 http://127.0.0.1:8000
+
+## Day 12 Progress
+
+- Implemented API logging
+- Logged prediction requests
+- Logged churn prediction results
+- Added error logging
+- Created logging documentation
+- Improved API monitoring
+
+## Day 13 Progress
+
+- Developed model_monitor.py to evaluate the saved Logistic Regression model.
+- Computed Accuracy, Precision, Recall, F1 Score, ROC-AUC, and Confusion Matrix.
+- Generated model_performance_report.md.
+- Exported evaluation metrics to model_metrics.csv.
+- Improved model monitoring and reporting capabilities.
+
+## Day 14 Progress
+
+- Implemented model versioning utility.
+- Archived trained models with version numbers.
+- Created model registry.
+- Stored training metadata.
+- Prevented overwriting of previous models.
+- Improved model lifecycle management.
+
