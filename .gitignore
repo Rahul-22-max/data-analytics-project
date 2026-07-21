@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python cache
 __pycache__/
 *.py[cod]
@@ -15,3 +16,9 @@ Thumbs.db
 
 # Log files
 *.log
+=======
+venv/
+__pycache__/
+*.pyc
+.env
+>>>>>>> origin/member5-api

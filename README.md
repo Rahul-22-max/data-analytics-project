@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Customer Churn Prediction & Customer Lifetime Value (LTV) Engine
 
 «An end-to-end Machine Learning project that predicts customer churn using the Telco Customer Churn dataset and exposes predictions through a Flask REST API.»
@@ -370,3 +371,19 @@ Team Lead | B.Tech Data Analytics Student
 Project Version: 1.0
 
 Status: Completed
+=======
+# Customer Churn & LTV Prediction API
+
+## Overview
+This project provides a FastAPI backend for:
+- Customer Churn Prediction
+- Customer Lifetime Value (LTV) Prediction
+
+## Tech Stack
+- FastAPI
+- Python
+- Scikit-learn
+- XGBoost
+- Pandas
+- Uvicorn
+>>>>>>> origin/member5-api
