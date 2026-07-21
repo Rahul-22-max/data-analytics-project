@@ -12,11 +12,18 @@ from sklearn.metrics import (
     confusion_matrix
 )
 
+# Import configuration
+from config.config import (
+    DATA_PATH,
+    MODEL_PATH,
+    REPORTS_DIR,
+    TEST_SIZE,
+    RANDOM_STATE
+)
+
 # -----------------------------
 # Load Dataset
 # -----------------------------
-DATA_PATH = "Data/processed/cleaned_telco_customer_churn.csv"
-
 df = pd.read_csv(DATA_PATH, sep="\t")
 
 # Remove non-numeric column if present
@@ -32,16 +39,14 @@ y = df["Churn"]
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
-    test_size=0.2,
-    random_state=42,
+    test_size=TEST_SIZE,
+    random_state=RANDOM_STATE,
     stratify=y
 )
 
 # -----------------------------
 # Load Saved Model
 # -----------------------------
-MODEL_PATH = "models/chrun_model/churn_model.pkl"
-
 model = joblib.load(MODEL_PATH)
 
 # -----------------------------
@@ -80,9 +85,11 @@ print(f"TP: {tp}")
 # -----------------------------
 # Save Report
 # -----------------------------
-os.makedirs("reports", exist_ok=True)
+os.makedirs(REPORTS_DIR, exist_ok=True)
 
-with open("reports/model_performance_report.md", "w") as report:
+report_path = os.path.join(REPORTS_DIR, "model_performance_report.md")
+
+with open(report_path, "w") as report:
 
     report.write("# Model Performance Report\n\n")
     report.write("## Model\n")
@@ -101,7 +108,7 @@ with open("reports/model_performance_report.md", "w") as report:
     report.write(f"- False Negatives: {fn}\n")
     report.write(f"- True Positives : {tp}\n")
 
-print("\nReport saved to reports/model_performance_report.md")
+print(f"\nReport saved to {report_path}")
 
 # -----------------------------
 # Save Metrics CSV
@@ -123,6 +130,7 @@ metrics = pd.DataFrame({
     ]
 })
 
-metrics.to_csv("reports/model_metrics.csv", index=False)
+metrics_path = os.path.join(REPORTS_DIR, "model_metrics.csv")
+metrics.to_csv(metrics_path, index=False)
 
-print("Metrics saved to reports/model_metrics.csv")
+print(f"Metrics saved to {metrics_path}")
