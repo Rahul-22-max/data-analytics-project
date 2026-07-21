@@ -16,6 +16,7 @@ import joblib
 
 from evaluate import evaluate
 from model_versioning import save_model_version
+from data_loader import load_data
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -47,7 +48,7 @@ os.makedirs(REPORTS_DIR, exist_ok=True)
 # ==========================================================
 # Load Dataset
 # ==========================================================
-df = pd.read_csv(DATA_PATH, sep="\t")
+df = load_data(DATA_PATH)
 
 # Remove non-numeric column if present
 if "TenureGroup" in df.columns:
@@ -108,6 +109,8 @@ coef_df.to_csv(
     index=False
 )
 
+print("\nFeature importance saved successfully.")
+
 # ==========================================================
 # Predictions
 # ==========================================================
@@ -120,7 +123,8 @@ y_prob = model.predict_proba(X_test)[:, 1]
 accuracy = accuracy_score(y_test, y_pred)
 auc = roc_auc_score(y_test, y_prob)
 
-print(f"\nROC-AUC Score: {auc:.4f}")
+print(f"\nAccuracy : {accuracy:.4f}")
+print(f"ROC-AUC  : {auc:.4f}")
 
 # ==========================================================
 # Save Latest Model
@@ -148,8 +152,20 @@ evaluate(y_test, y_pred)
 # ==========================================================
 # Classification Report
 # ==========================================================
+report = classification_report(y_test, y_pred)
+
 print("\nClassification Report:")
-print(classification_report(y_test, y_pred))
+print(report)
+
+report_path = os.path.join(
+    REPORTS_DIR,
+    "classification_report.txt"
+)
+
+with open(report_path, "w") as file:
+    file.write(report)
+
+print("\nClassification report saved successfully.")
 
 # ==========================================================
 # Confusion Matrix

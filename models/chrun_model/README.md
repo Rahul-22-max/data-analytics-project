@@ -203,3 +203,49 @@ http://127.0.0.1:8000
 - Reduced manual execution steps.
 - Improved project maintainability and reproducibility.
 
+## Day 16 - Configuration Management
+
+### Objective
+
+Implemented centralized configuration management to eliminate hardcoded paths and parameters across the Customer Churn Prediction project. This improves maintainability, scalability, and simplifies future modifications.
+
+### Features Implemented
+
+- Created a centralized `config/config.py` module.
+- Moved dataset, model, report, log, and saved model paths into the configuration file.
+- Centralized Logistic Regression hyperparameters.
+- Configured train/test split settings.
+- Automatically created required project directories.
+- Updated project modules to use configuration variables instead of hardcoded values.
+
+### Files Updated
+
+- `config/config.py`
+- `models/chrun_model/train.py`
+- `models/chrun_model/model_monitor.py`
+- `models/chrun_model/model_versioning.py`
+- `models/chrun_model/logger.py`
+
+### Configuration Parameters
+
+- Dataset Path
+- Model Directory
+- Latest Model Path
+- Versioned Model Directory
+- Reports Directory
+- Logs Directory
+- Train/Test Split Configuration
+- Logistic Regression Hyperparameters
+
+### Benefits
+
+- Centralized project configuration.
+- Reduced code duplication.
+- Easier maintenance and future updates.
+- Improved project portability.
+- Better code organization following production software engineering practices.
+
+### Outcome
+
+The project now uses a single configuration module to manage all paths and model settings, making the machine learning pipeline more maintainable, reusable, and scalable.
+
