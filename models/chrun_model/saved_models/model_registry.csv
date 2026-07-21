@@ -1,0 +1,5 @@
+Version,Model File,Algorithm,Accuracy,Training Date,Notes
+v1,churn_model_v1_20260721.pkl,Logistic Regression,0.8041,2026-07-21 14:29:22,Baseline production model
+v2,churn_model_v2_20260721.pkl,Logistic Regression,0.8041,2026-07-21 14:35:17,Baseline production model
+v3,churn_model_v3_20260721.pkl,Logistic Regression,0.8041,2026-07-21 14:57:00,Baseline production model
+v4,churn_model_v4_20260721.pkl,Logistic Regression,0.8041,2026-07-21 15:29:04,Baseline production model
